@@ -1,0 +1,12 @@
+#ifndef File_h
+#define File_h
+
+class File{
+
+public:
+    std::string filename;
+    std::string line;
+    void read(std::string filename,std::string line);
+
+};
+#endif
