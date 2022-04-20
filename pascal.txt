@@ -1,0 +1,19 @@
+Function: main/0
+Constants: None, "Enter the number of rows: ", 1, 0, " ", ('end', 'sep'), "{0:5}"
+Locals: input_num, list, n, m
+Globals: int, input, range, append, print, format
+BEGIN
+          LOAD_GLOBAL                    0
+          LOAD_GLOBAL                    1
+          LOAD_CONST                     1
+          CALL_FUNCTION                  1
+          CALL_FUNCTION                  1
+          STORE_FAST                     0
+          BUILD_LIST                     0
+          STORE_FAST                     1
+          LOAD_GLOBAL                    2
+          LOAD_FAST                      0
+          CALL_FUNCTION                  1
+          GET_ITER                 
+
+Process finished with exit code 1
