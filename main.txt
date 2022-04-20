@@ -1,0 +1,54 @@
+#ifdef _linux_
+#define File "file"
+#endif
+ // _linux_
+#ifdef _MINGW32_
+#define File "file"
+#endif
+// _MINGW32_
+
+
+#include <iostream>
+#include <string>
+#include "File.h"
+using namespace std;
+
+string line;
+int cont;
+File archivo;
+
+int main(){
+
+        cout<<"Escoge la opción que deseas utilizar: "<<endl;
+        cout<<"(1) para ejecutar el triangulo de pascal"<<endl;
+        cout<<"(2) para ejecutar el factorial"<<endl;
+        cout<<"(3) para ejecutar operaciones"<<endl;
+        cout<<"(4) para ejecutar matrices"<<endl;
+    cin>>cont;
+
+
+    switch(cont){
+        case 1:
+        archivo.read("TrianguloPascal.casm",line);
+        system("java -jar JCoCo.jar TrianguloPascal.casm");
+        break;
+
+        case 2:
+        archivo.read("Factorial.casm", line);
+        system("java -jar JCoCo.jar Factorial.casm");
+        break;
+
+        case 3:
+        archivo.read("Operaciones.casm",line);
+        system("java -jar JCoCo.jar Operaciones.casm");
+        break;
+
+        case 4:
+        archivo.read("Matrices.casm",line);
+        system("java -jar JCoCo.jar lista.casm");
+        break;
+
+
+    }
+    return 0;
+}
