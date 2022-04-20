@@ -1,0 +1,47 @@
+Function: main/0
+Constants: None, 1,10, "El factorial de 10 es:" 
+Locals : x, y, z
+Globals: print
+
+BEGIN
+        LOAD_CONST          2
+        STORE_FAST          0       ; ejemplo 10
+        LOAD_CONST          1       ;carga constante "1"
+        STORE_FAST          1           ; guarda cosntante "1" en y 
+        LOAD_CONST          1           ;carga constante "1"
+        STORE_FAST          2               ; guarda constante "1" en z 
+
+
+        LOAD_FAST           0                   ; carga x = 10
+        LOAD_FAST           1                   ;carga y
+        COMPARE_OP          5                    ; 10 >= y
+        POP_JUMP_IF_TRUE    esTrue                    
+
+
+        esTrue: LOAD_FAST        0              ; carga x 
+                LOAD_FAST        1              ;carga y = 1
+
+                LOAD_FAST        2             ; carga  z 
+                LOAD_FAST        0             ;carga x 
+                BINARY_MULTIPLY                 ; x * z (10*1) = 10
+                STORE_FAST       2              ; guarda resultado en z-> z = 10
+
+                LOAD_FAST        0               ; carga x 
+                LOAD_CONST       1               ; carga y
+                BINARY_SUBTRACT                  ; x-y
+                STORE_FAST       0               ;guarda resta en x
+
+                LOAD_FAST        0               ;carga x = 9
+                LOAD_CONST       1               ;carga y  = 1     
+                COMPARE_OP       5               ; (x-1) >= 1
+                POP_JUMP_IF_TRUE esTrue         ; recursivo ?? 
+                
+                LOAD_GLOBAL 0
+                LOAD_CONST  3
+                LOAD_FAST   2
+                CALL_FUNCTION 2
+
+                POP_TOP
+                LOAD_CONST 0
+                RETURN_VALUE
+END
